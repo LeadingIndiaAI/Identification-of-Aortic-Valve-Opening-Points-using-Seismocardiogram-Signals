@@ -1,0 +1,58 @@
+::::imports:::::
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+////////////////////////////////////////////
+:::dataset creation::::::
+
+
+os.chdir('C:\\Users\\Dell Notebook\\Desktop\\internship\\Cardiac_SCG_Annotation\\ECG Data\\')
+dataset=pd.read_csv('ECG b0011.csv')
+dataset
+
+x=dataset.iloc[1:,0].values
+x
+
+y=list(set(x))
+y
+
+y2=dataset.iloc[1:,1].values
+y2
+
+for i in range(len(y)):
+    y[i]=float(y[i])
+
+for i in range(len(y2)):
+    y2[i]=float(y2[i])
+
+for i in range(len(x)):
+    x[i]=float(x[i])
+
+y.sort()
+:::::::::mean()::::::::::::::::::::::::
+
+
+z=[]
+j=0
+for i in range(len(y)):
+    cout=0
+    summ=0
+    while(1):
+        if(j<len(y2)):
+            if(y[i]==x[j]):
+                summ+=y2[j]
+                j+=1
+                cout+=1
+            else:
+                break
+        else:
+            break
+    avg=0
+    avg=summ/cout
+    z.append(avg)
+
+plt.plot(z)
+
+max(z)
+///////////////////////////////////////////////

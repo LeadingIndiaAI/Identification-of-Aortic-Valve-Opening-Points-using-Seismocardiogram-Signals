@@ -1,0 +1,53 @@
+def mm(a,n=41):
+    ll1=[]
+    i=0
+    while(i<=len(a)-n):
+        ll1.append(statistics.median(a[i:i+n]))
+        i+=1
+    return ll1
+    
+z3=mm(z)
+
+plt.plot(z3[1000:2000])
+plt.title('SCG b001 Median')
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+def mm(a,n=41):
+    ll1=[]
+    i=0
+    while(i<=len(a)-n):
+        ll1.append(statistics.mean(a[i:i+n]))
+        i+=1
+    return ll1
+    
+z2=mm(z)
+
+plt.plot(z2[1000:2000])
+plt.title('SCG b001 Mean window=41')
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+def mm(a,n=41):
+    ll1=[]
+    i=0
+    while(i<=len(a)-n):
+        ll1.append(statistics.stdev(a[i:i+n]))
+        i+=1
+    return ll1
+z4=mm(z)
+plt.title('SCG b001 standard deviation')
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+def mm(a,n=41):
+    ll1=[]
+    i=0
+    while(i<=len(a)-n):
+        ll1.append(statistics.variance(a[i:i+n]))
+        i+=1
+    return ll1
+    
+z5=mm(z)
+
+plt.plot(z5[1000:2000])
+plt.title('SCG b001 variance')
